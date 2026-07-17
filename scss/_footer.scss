@@ -1,0 +1,15 @@
+@import 'variables';footer {
+  background-color: $footer-bg-color;
+  color: $footer-text-color;
+  padding: 20px;
+  text-align: center;
+
+  a {
+    color: $footer-link-color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

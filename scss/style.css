@@ -1,0 +1,15 @@
+/*# sourceMappingURL=style.css.map */
+
+/* Archivo principal: style.scss */
+
+
+@import 'variables';
+
+@import 'reset';
+@import 'body';
+
+@import 'header';
+@import 'footer';
+
+@import 'gallery';
+@import 'form'; 
