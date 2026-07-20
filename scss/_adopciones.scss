@@ -1,0 +1,29 @@
+.adopciones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+
+    .card-animal {
+        background-color: $color-secundario;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease;
+
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+  }
+}
