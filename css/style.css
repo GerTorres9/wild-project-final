@@ -1,1 +1,104 @@
+/* Mis variables SASS - Tema Safari */
+header {
+  background-color: #807661;
+  padding: 20px;
+  text-align: center;
+}
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+header nav ul li {
+  margin: 0 15px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #D4A35B;
+  font-weight: bold;
+}
+header nav ul li a:hover {
+  color: #F0EAD6;
+}
+
+footer {
+  background-color: #2E3825;
+  color: #F0EAD6;
+  padding: 20px;
+  text-align: center;
+}
+footer a {
+  color: #D4A35B;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+.adopciones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .adopciones {
+    grid-template-columns: 1fr;
+  }
+}
+.adopciones .card-animal {
+  background-color: #807661;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.adopciones .card-animal img {
+  width: 100%;
+  border-radius: 5px;
+}
+.adopciones .card-animal:hover {
+  transform: scale(1.05);
+}
+
+form {
+  background-color: #807661;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+form label {
+  font-weight: bold;
+  color: #F0EAD6;
+}
+form input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+form select, form textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+}
+form button {
+  background-color: #D4A35B;
+  color: #2E3825;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+form button:hover {
+  opacity: 0.8;
+}
+
 /*# sourceMappingURL=style.css.map */
