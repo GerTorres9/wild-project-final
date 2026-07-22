@@ -1,10 +1,10 @@
 footer {
-background-color: $color-fondo;
-color: $color-texto;
+background-color: $color-oliva;
+color: $color-texto-claro;
 padding: 20px;
 text-align: center;
 
-a { color: $color-primario;
+a { color: $color-texto-claro;
     text-decoration: none;
 
     &:hover {

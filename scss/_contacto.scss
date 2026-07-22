@@ -1,3 +1,10 @@
+body {
+    background-color: $color-fondo;
+    color: $color-texto;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 form {
     background-color: $color-secundario;
     padding: 30px;
@@ -10,7 +17,7 @@ form {
 
     label {
         font-weight: bold;
-        color: $color-texto;
+        color: $color-oliva;
     }
 
     input {
@@ -29,7 +36,7 @@ form {
 
     button {
 
-        background-color: $color-primario;
+        background-color: $color-oliva;
         color: $color-fondo;
         padding: 10px 20px;
         border: none;

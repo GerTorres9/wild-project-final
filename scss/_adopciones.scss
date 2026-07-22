@@ -9,21 +9,43 @@
     }
 
     .card-animal {
-        background-color: $color-secundario;
+        background-color: $color-secundario; /* Fondo Tierra */
         padding: 20px;
         border-radius: 10px;
+        border-bottom: 4px solid $color-primario; /* Detalle dorado */
         text-align: center;
         transition: transform 0.3s ease;
 
         img {
             width: 100%;
             border-radius: 5px;
+            margin-bottom: 15px;
         }
 
+        p {
+            color: $color-texto-claro; /* 🎯 Párrafo claro para legibilidad */
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
 
-    &:hover {
-        transform: scale(1.05);
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            background-color: $color-primario;
+            color: $color-oliva;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            
+            &:hover {
+                background-color: $color-fondo;
+                color: $color-oliva;
+            }
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
-
-  }
 }

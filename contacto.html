@@ -1,60 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wild Project</title>
+    <title>Contacto - The Wild Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
- <header>
-    <h1>Contacto con Wild Project</h1>
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicío</a></li>
-            <li><a href="adopciones.html">Adopciones</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="ecologia.html">Ecologia</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-        </ul>
-    </nav>
-    <main>
+<body class="body-contacto">
+    <header>
+        <h1>The Wild Project</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="ecologia.html">Ecología</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </header> <main>
         <section>
-            <h2>El mundo salvaje de la salvación</h2>
-            <p>El Proyecto Wild está dedicado a explorar las maravillas de la naturaleza y la conservación de la vida silvestre.
-                Nuestra misión es concienciar sobre la importancia de preservar nuestros hábitats naturales y proteger las especies en peligro
-             de extinción ademas de la adopcion responsable y el apoyo a la reubicacion de especies.</p>
+            <h2>Contacto y Adopciones Responsables</h2>
+            <p>Si estás interesado en adoptar a cualquiera de nuestras mascotas, o quieres recibir asesoría sobre el cuidado sustentable de animales exóticos, déjanos tus datos.</p>
         </section>
-        <section>
-            <h2>Contacto y adopciones responsables</h2>
-            <p>Si estás interesado en adoptar a cualquiera de nuestras mascotas, o quieres recibir asesoría 
-                sobre el cuidado sustentable de animales exóticos, déjanos tus datos.</p>
-                
-        </section>
-        <form class="formulario de contacto">
-            <label for="Nombre">Nombre completo</label>
+
+        <form class="formulario-contacto">
+            <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" required>
-            <label for="Numero">Número de contacto</label>
+            
+            <label for="numero">Número de contacto</label>
             <input type="tel" id="numero" required>
-            <label for="Correo">Correo electrónico</label>
+            
+            <label for="correo">Correo electrónico</label>
             <input type="email" id="correo" required>
+            
             <label for="mascotas">Mascotas de interés</label>
             <select id="mascotas" required>
-                <option value="">seleccione una mascota</option>
+                <option value="">Seleccione una mascota</option>
                 <option value="perro">Max</option>
                 <option value="gato">Kitty</option>
                 <option value="gecko">Rex</option>
-                
             </select>
+            
             <label for="mensaje">¿Por qué deseas adoptar a esta mascota?</label>
             <textarea id="mensaje" required></textarea>
+            
             <button type="submit">Enviar</button>
          </form>
-            
     </main>
 
     <footer>
-        <p>&copy; 2026 Wild Project. All rights reserved.</p>
-     </footer>
+        <p>&copy; 2026 The Wild Project. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

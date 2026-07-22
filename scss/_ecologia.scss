@@ -1,0 +1,14 @@
+
+
+.tarjeta-ecologia {
+    background-color: $color-secundario;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 6px solid $color-primario; /* Borde dorado de diseño */
+    margin-bottom: 25px; 
+
+    p {
+        color: $color-texto-claro; /* Forzamos texto claro para contraste y accesibilidad */
+        line-height: 1.6;
+    }
+}

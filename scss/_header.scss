@@ -1,13 +1,16 @@
 header {
-    background-color: $color-secundario;
+    background-color: $color-secundario; /* Mantiene la franja oscura superior */
     padding: 20px;
     text-align: center;
 
-    nav{
+    h1 {
+        letter-spacing: 5px; /* Espaciado ancho característico del proyecto */
+    }
+
+    nav {
+        margin-top: 15px;
         ul {
             list-style-type: none;
-            margin: 0;
-            padding: 0;
             display: flex;
             justify-content: center;
 
@@ -16,15 +19,14 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: $color-primario;
+                    color: $color-texto-claro; /* Texto claro para que sea legible */
                     font-weight: bold;
 
                     &:hover {
-                        color: $color-texto;
+                        color: $color-primario; /* Cambio a dorado en hover */
                     }
                 }
             }
-    } 
-
+        } 
     }
 }

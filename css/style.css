@@ -1,13 +1,47 @@
-/* Mis variables SASS - Tema Safari */
+@charset "UTF-8";
+/* Variables de la paleta institucional */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F0EAD6; /* Aplica el fondo claro a todos los HTML */
+  color: #333333;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 🎯 Separación automática y color global para títulos solicitados */
+h1, h2, h3 {
+  color: #2E3825;
+  font-family: "Russo One", sans-serif;
+  margin-bottom: 25px; /* Crea el efecto de salto de párrafo de forma automática */
+}
+
+main {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 header {
-  background-color: #807661;
+  background-color: #807661; /* Mantiene la franja oscura superior */
   padding: 20px;
   text-align: center;
 }
+header h1 {
+  letter-spacing: 5px; /* Espaciado ancho característico del proyecto */
+}
+header nav {
+  margin-top: 15px;
+}
 header nav ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
 }
@@ -16,11 +50,11 @@ header nav ul li {
 }
 header nav ul li a {
   text-decoration: none;
-  color: #D4A35B;
+  color: #F0EAD6; /* Texto claro para que sea legible */
   font-weight: bold;
 }
 header nav ul li a:hover {
-  color: #F0EAD6;
+  color: #D4A35B; /* Cambio a dorado en hover */
 }
 
 footer {
@@ -30,7 +64,7 @@ footer {
   text-align: center;
 }
 footer a {
-  color: #D4A35B;
+  color: #F0EAD6;
   text-decoration: none;
 }
 footer a:hover {
@@ -49,18 +83,47 @@ footer a:hover {
   }
 }
 .adopciones .card-animal {
-  background-color: #807661;
+  background-color: #807661; /* Fondo Tierra */
   padding: 20px;
   border-radius: 10px;
+  border-bottom: 4px solid #D4A35B; /* Detalle dorado */
   text-align: center;
   transition: transform 0.3s ease;
 }
 .adopciones .card-animal img {
   width: 100%;
   border-radius: 5px;
+  margin-bottom: 15px;
+}
+.adopciones .card-animal p {
+  color: #F0EAD6; /* 🎯 Párrafo claro para legibilidad */
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+.adopciones .card-animal a {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: #D4A35B;
+  color: #2E3825;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.adopciones .card-animal a:hover {
+  background-color: #F0EAD6;
+  color: #2E3825;
 }
 .adopciones .card-animal:hover {
   transform: scale(1.05);
+}
+
+body {
+  background-color: #F0EAD6;
+  color: #333333;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 form {
@@ -75,7 +138,7 @@ form {
 }
 form label {
   font-weight: bold;
-  color: #F0EAD6;
+  color: #2E3825;
 }
 form input {
   padding: 10px;
@@ -89,8 +152,8 @@ form select, form textarea {
   font-family: inherit;
 }
 form button {
-  background-color: #D4A35B;
-  color: #2E3825;
+  background-color: #2E3825;
+  color: #F0EAD6;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -99,6 +162,18 @@ form button {
 }
 form button:hover {
   opacity: 0.8;
+}
+
+.tarjeta-ecologia {
+  background-color: #807661;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 6px solid #D4A35B; /* Borde dorado de diseño */
+  margin-bottom: 25px;
+}
+.tarjeta-ecologia p {
+  color: #F0EAD6; /* Forzamos texto claro para contraste y accesibilidad */
+  line-height: 1.6;
 }
 
 /*# sourceMappingURL=style.css.map */

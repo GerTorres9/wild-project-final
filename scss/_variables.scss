@@ -1,5 +1,38 @@
-/* Mis variables SASS - Tema Safari */
-$color-primario: #D4A35B; // Dorado Safari
-$color-secundario: #807661; // Tierra Piedra
-$color-fondo: #2E3825; // Verde Olivo
-$color-texto: #F0EAD6; // Arena
+
+
+/* Variables de la paleta institucional */
+$color-primario: #D4A35B;    // Dorado Safari
+$color-secundario: #807661;  // Tierra Piedra (Fondo para tus tarjetas u objetos oscuros)
+$color-fondo: #F0EAD6;       // Arena (Fondo general claro para todas las páginas)
+$color-oliva: #2E3825;       // Verde Olivo (Para todos los títulos y subtítulos)
+$color-texto: #333333;       // Gris oscuro para el texto normal sobre fondo claro
+$color-texto-claro: #F0EAD6; // Texto claro para elementos dentro de cajas oscuras
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-fondo; /* Aplica el fondo claro a todos los HTML */
+    color: $color-texto;    
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; 
+}
+
+/* 🎯 Separación automática y color global para títulos solicitados */
+h1, h2, h3 {
+    color: $color-oliva;
+    font-family: 'Russo One', sans-serif;
+    margin-bottom: 25px; /* Crea el efecto de salto de párrafo de forma automática */
+}
+
+main {
+   flex: 1;
+   padding: 40px 20px;
+   max-width: 1000px;
+   margin: 0 auto;
+}
