@@ -24,6 +24,9 @@ form {
         padding: 10px;
         border: none;
         border-radius: 5px;
+        background-color: $color-oliva;
+        color: $color-primario;
+        font-weight: bold;
     }
 
     select, textarea { 
@@ -32,6 +35,9 @@ form {
         border: none;
         border-radius: 5px;
         font-family: inherit;
+         background-color: $color-oliva;
+        color: $color-primario;
+        font-weight: bold;
     }
 
     button {

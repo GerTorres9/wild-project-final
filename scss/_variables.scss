@@ -29,7 +29,11 @@ h1, h2, h3 {
     font-family: 'Russo One', sans-serif;
     margin-bottom: 25px; /* Crea el efecto de salto de párrafo de forma automática */
 }
-
+p{
+    margin-bottom: 20px; /* Crea el efecto de salto de párrafo de forma automática */
+    line-height: 1.6;
+    color: $color-texto;
+}
 main {
    flex: 1;
    padding: 40px 20px;
