@@ -21,16 +21,20 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column; 
+    overflow-x: hidden;
+}
+img {
+    max-width: 100%; 
+    height: auto;
 }
 
-/* 🎯 Separación automática y color global para títulos solicitados */
 h1, h2, h3 {
     color: $color-oliva;
     font-family: 'Russo One', sans-serif;
-    margin-bottom: 25px; /* Crea el efecto de salto de párrafo de forma automática */
+    margin-bottom: 25px; 
 }
 p{
-    margin-bottom: 20px; /* Crea el efecto de salto de párrafo de forma automática */
+    margin-bottom: 20px; 
     line-height: 1.6;
     color: $color-texto;
 }

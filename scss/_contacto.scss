@@ -17,15 +17,15 @@ form {
 
     label {
         font-weight: bold;
-        color: $color-oliva;
+        color: $color-fondo
     }
 
     input {
         padding: 10px;
         border: none;
         border-radius: 5px;
-        background-color: $color-oliva;
-        color: $color-primario;
+        background-color: $color-fondo;
+        color: $color-oliva;
         font-weight: bold;
     }
 
@@ -35,8 +35,8 @@ form {
         border: none;
         border-radius: 5px;
         font-family: inherit;
-         background-color: $color-oliva;
-        color: $color-primario;
+         background-color: $color-fondo;
+        color: $color-oliva;
         font-weight: bold;
     }
 

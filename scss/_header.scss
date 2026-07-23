@@ -7,26 +7,32 @@ header {
         letter-spacing: 5px; /* Espaciado ancho característico del proyecto */
     }
 
-    nav {
-        margin-top: 15px;
-        ul {
+    nav ul {
+             margin-top: 15px;
             list-style-type: none;
             display: flex;
             justify-content: center;
+            gap: 15px;
+            
+@media (max-width: 768px) {
+            flex-direction: column; /* Apila los botones verticalmente */
+            gap: 20px;
+        }
 
             li {
-                margin: 0 15px;
+            margin: 0 15px;
 
-                a {
-                    text-decoration: none;
-                    color: $color-texto-claro; /* Texto claro para que sea legible */
-                    font-weight: bold;
+            a {
+                text-decoration: none;
+                color: $color-texto-claro; /* Texto claro para que sea legible */
+                font-weight: bold;
 
-                    &:hover {
-                        color: $color-primario; /* Cambio a dorado en hover */
-                    }
+                
+                &:hover {
+                    color: $color-primario; 
                 }
             }
-        } 
+        }
     }
 }
+    
