@@ -1,46 +1,49 @@
+// =============================================================
+// _variables.scss — Wild Project
+// Paleta institucional, tipografía, espaciado, sombras, breaks
+// =============================================================
 
+// --- Paleta de colores institucional ---
+$color-primario:     #D4A35B;   // Dorado Safari (acento principal)
+$color-secundario:   #807661;   // Tierra Piedra (fondos de tarjetas oscuras)
+$color-fondo:        #F0EAD6;   // Arena (fondo general claro)
+$color-oliva:        #2E3825;   // Verde Olivo (títulos y fondos premium)
+$color-texto:        #333333;   // Gris oscuro (texto normal)
+$color-texto-claro:  #F0EAD6;   // Arena (texto sobre fondos oscuros)
+$color-acento:       #B8860B;   // Dorado oscuro (hover y detalles)
 
-/* Variables de la paleta institucional */
-$color-primario: #D4A35B;    // Dorado Safari
-$color-secundario: #807661;  // Tierra Piedra (Fondo para tus tarjetas u objetos oscuros)
-$color-fondo: #F0EAD6;       // Arena (Fondo general claro para todas las páginas)
-$color-oliva: #2E3825;       // Verde Olivo (Para todos los títulos y subtítulos)
-$color-texto: #333333;       // Gris oscuro para el texto normal sobre fondo claro
-$color-texto-claro: #F0EAD6; // Texto claro para elementos dentro de cajas oscuras
+// --- Tipografía ---
+$font-heading:        'Russo One', sans-serif;
+$font-body:           'Open Sans', sans-serif;
+$font-size-base:      1rem;
+$line-height-base:    1.7;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// --- Espaciado base ---
+$spacing-xs:   0.5rem;
+$spacing-sm:   1rem;
+$spacing-md:   2rem;
+$spacing-lg:   3rem;
+$spacing-xl:   5rem;
 
-body {
-    background-color: $color-fondo; /* Aplica el fondo claro a todos los HTML */
-    color: $color-texto;    
-    font-family: Arial, Helvetica, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; 
-    overflow-x: hidden;
-}
-img {
-    max-width: 100%; 
-    height: auto;
-}
+// --- Radios de borde ---
+$radius-sm:    5px;
+$radius-md:    10px;
+$radius-lg:    20px;
+$radius-pill:  50px;
 
-h1, h2, h3 {
-    color: $color-oliva;
-    font-family: 'Russo One', sans-serif;
-    margin-bottom: 25px; 
-}
-p{
-    margin-bottom: 20px; 
-    line-height: 1.6;
-    color: $color-texto;
-}
-main {
-   flex: 1;
-   padding: 40px 20px;
-   max-width: 1000px;
-   margin: 0 auto;
-}
+// --- Sombras ---
+$shadow-sm:     0 2px 8px  rgba(0, 0, 0, 0.10);
+$shadow-md:     0 4px 20px rgba(0, 0, 0, 0.15);
+$shadow-lg:     0 8px 40px rgba(0, 0, 0, 0.20);
+$shadow-golden: 0 4px 20px rgba(212, 163, 91, 0.35);
+
+// --- Transiciones ---
+$transition-base: 0.3s ease;
+$transition-slow: 0.5s ease;
+
+// --- Breakpoints ---
+$bp-xs: 480px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;

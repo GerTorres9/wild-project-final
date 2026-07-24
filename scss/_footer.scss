@@ -1,30 +1,184 @@
-footer {
-background-color: $color-oliva;
-color: $color-fondo;
-padding: 20px;
-text-align: center;
+// =============================================================
+// _footer.scss — Wild Project
+// Footer institucional con 3 columnas, redes sociales y créditos
+// =============================================================
 
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    
+.site-footer {
+    background-color: $color-oliva;
+    color: $color-texto-claro;
+    padding: 3.5rem 0 0;
+    margin-top: auto;
 
-    .logo {
-        width: 80px; 
-        border-radius: 50%; /* Opcional: Hace que el logo sea circular */
-        margin-top: 5px;
-    margin-bottom: 5px;
+    // --- Marca (logo + nombre) ---
+    .footer-brand {
+        @include flex-center(column);
+        gap: 0.75rem;
+        margin-bottom: $spacing-md;
+
+        .logo-footer {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid $color-primario;
+            transition: transform $transition-base, box-shadow $transition-base;
+
+            &:hover {
+                transform: scale(1.08) rotate(5deg);
+                box-shadow: $shadow-golden;
+            }
+        }
+
+        .footer-title {
+            font-family: $font-heading;
+            color: $color-primario;
+            font-size: 1.25rem;
+            letter-spacing: 2.5px;
+            margin: 0;
+        }
+
+        .footer-tagline {
+            color: rgba(240, 234, 214, 0.6);
+            font-size: 0.78rem;
+            margin: 0;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-align: center;
+        }
     }
-}
-p { 
-  color: $color-fondo;
-    text-decoration: none;
 
-    &:hover {
-        text-decoration: underline;
+    // --- Encabezados de columna ---
+    .footer-heading {
+        font-family: $font-heading;
+        color: $color-primario;
+        font-size: 0.95rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 1.3rem;
+        position: relative;
+        padding-bottom: 0.7rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            height: 2px;
+            background: $color-primario;
+            border-radius: $radius-pill;
+        }
     }
-  }
 
+    // --- Lista de links de navegación ---
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 0.6rem;
+
+            a {
+                color: rgba(240, 234, 214, 0.75);
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: all $transition-base;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                i {
+                    color: $color-primario;
+                    font-size: 0.75rem;
+                    transition: transform $transition-base;
+                }
+
+                &:hover {
+                    color: $color-primario;
+                    transform: translateX(5px);
+
+                    i {
+                        transform: translateX(2px);
+                    }
+                }
+            }
+        }
+    }
+
+    // --- Información de contacto ---
+    .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 1rem;
+
+        i {
+            color: $color-primario;
+            font-size: 1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        span {
+            color: rgba(240, 234, 214, 0.75);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+    }
+
+    // --- Redes sociales ---
+    .footer-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 1.2rem;
+
+        a {
+            @extend %icon-circle;
+            width: 38px;
+            height: 38px;
+            background-color: rgba(212, 163, 91, 0.12);
+            border: 1px solid rgba(212, 163, 91, 0.35);
+            color: $color-primario;
+            text-decoration: none;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: $color-primario;
+                color: $color-oliva;
+                transform: translateY(-4px);
+                box-shadow: $shadow-golden;
+            }
+        }
+    }
+
+    // --- Línea divisoria ---
+    .footer-divider {
+        border: none;
+        border-top: 1px solid rgba(212, 163, 91, 0.2);
+        margin: 2.5rem 0 0;
+    }
+
+    // --- Barra inferior de créditos ---
+    .footer-bottom {
+        background-color: rgba(0, 0, 0, 0.15);
+        padding: 1rem 0;
+        text-align: center;
+
+        p {
+            color: rgba(240, 234, 214, 0.45);
+            font-size: 0.78rem;
+            margin: 0;
+            letter-spacing: 0.5px;
+
+            a {
+                color: $color-primario;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
 }

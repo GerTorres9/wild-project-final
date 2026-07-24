@@ -1,0 +1,155 @@
+// =============================================================
+// _animations.scss — Wild Project
+// Keyframes y clases de animación
+// =============================================================
+
+// --- Fade In desde abajo ---
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// --- Fade In desde la izquierda ---
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// --- Fade In desde la derecha ---
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+// --- Scale in (zoom suave) ---
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.88);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+// --- Pulso de borde dorado ---
+@keyframes pulseBorder {
+    0%, 100% {
+        box-shadow: 0 0 0 0   rgba(212, 163, 91, 0.45);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(212, 163, 91, 0);
+    }
+}
+
+// --- Flotación suave (scroll indicator) ---
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(-50%); }
+    50%       { transform: translateY(-10px) translateX(-50%); }
+}
+
+// --- Respiración de íconos ---
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.12); }
+}
+
+// --- Shimmer (brillo deslizante en botones) ---
+@keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position:  200% center; }
+}
+
+// --- Rotación continua ---
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+// --- Counter up (para el JS) ---
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+// --- Fade In simple ---
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+// =============================================================
+// Clases de animación reutilizables
+// =============================================================
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.7s ease both;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 0.7s ease both;
+}
+
+.animate-slide-right {
+    animation: slideInRight 0.7s ease both;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease both;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+// --- Delays escalonados (para listas de cards) ---
+@for $i from 1 through 8 {
+    .delay-#{$i} {
+        animation-delay: #{$i * 0.12}s;
+    }
+}
+
+// --- Transición de hover en imágenes ---
+.img-hover-zoom {
+    overflow: hidden;
+
+    img {
+        transition: transform $transition-slow;
+
+        &:hover {
+            transform: scale(1.06);
+        }
+    }
+}
+
+// --- Línea de carga / skeleton shimmer ---
+.shimmer-line {
+    background: linear-gradient(
+        90deg,
+        rgba(212, 163, 91, 0.1) 25%,
+        rgba(212, 163, 91, 0.3) 50%,
+        rgba(212, 163, 91, 0.1) 75%
+    );
+    background-size: 200% auto;
+    animation: shimmer 1.8s linear infinite;
+    border-radius: $radius-sm;
+}

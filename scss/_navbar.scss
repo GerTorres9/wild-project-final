@@ -1,0 +1,148 @@
+// =============================================================
+// _navbar.scss — Wild Project
+// Bootstrap navbar completamente customizada con identidad propia
+// =============================================================
+
+.navbar {
+    background-color: $color-secundario !important;
+    padding: 0.75rem 1.5rem;
+    transition: all $transition-slow;
+    box-shadow: $shadow-sm;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+
+    // Estado: navbar al hacer scroll
+    &.navbar-scrolled {
+        background-color: rgba(46, 56, 37, 0.97) !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: $shadow-md;
+        padding: 0.45rem 1.5rem;
+    }
+
+    // --- Logo y nombre de marca ---
+    .navbar-brand {
+        @include flex-center(row);
+        gap: 12px;
+        text-decoration: none;
+
+        .logo-nav {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid $color-primario;
+            transition: transform $transition-base, box-shadow $transition-base;
+            flex-shrink: 0;
+
+            &:hover {
+                transform: rotate(6deg) scale(1.06);
+                box-shadow: $shadow-golden;
+            }
+        }
+
+        .brand-name {
+            font-family: $font-heading;
+            font-size: 1.05rem;
+            color: $color-primario !important;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            transition: color $transition-base;
+
+            span {
+                display: block;
+                font-size: 0.6rem;
+                color: rgba(240, 234, 214, 0.7) !important;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                font-family: $font-body;
+                font-weight: 400;
+            }
+        }
+    }
+
+    // --- Links de navegación ---
+    .nav-link {
+        color: $color-texto-claro !important;
+        font-weight: 600;
+        font-family: $font-body;
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        padding: 0.45rem 0.9rem !important;
+        border-radius: $radius-sm;
+        transition: all $transition-base;
+        position: relative;
+
+        // Línea animada inferior
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: $color-primario;
+            transition: width $transition-base;
+            border-radius: $radius-pill;
+        }
+
+        &:hover {
+            color: $color-primario !important;
+
+            &::after {
+                width: 65%;
+            }
+        }
+
+        &.active {
+            color: $color-primario !important;
+            font-weight: 700;
+
+            &::after {
+                width: 65%;
+            }
+        }
+    }
+
+    // --- Botón hamburguesa ---
+    .navbar-toggler {
+        border: 1.5px solid $color-primario;
+        padding: 6px 10px;
+        transition: all $transition-base;
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28212%2C163%2C91%2C1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(212, 163, 91, 0.3);
+            outline: none;
+        }
+
+        &:hover {
+            background-color: rgba(212, 163, 91, 0.15);
+        }
+    }
+
+    // --- Menú colapsado en mobile ---
+    .navbar-collapse {
+        @include respond-to('lg') {
+            background-color: rgba(46, 56, 37, 0.97);
+            border-radius: $radius-md;
+            padding: 1rem 1.2rem;
+            margin-top: 0.5rem;
+            border: 1px solid rgba(212, 163, 91, 0.2);
+
+            .nav-link {
+                padding: 0.6rem 0.5rem !important;
+                border-bottom: 1px solid rgba(212, 163, 91, 0.1);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

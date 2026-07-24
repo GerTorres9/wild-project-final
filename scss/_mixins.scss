@@ -1,0 +1,132 @@
+// =============================================================
+// _mixins.scss — Wild Project
+// Mixins reutilizables: responsive, flex, botones, secciones
+// =============================================================
+
+// --- Mixin: Responsive breakpoints ---
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'xs' {
+        @media (max-width: #{$bp-xs}) { @content; }
+    } @else if $breakpoint == 'sm' {
+        @media (max-width: #{$bp-sm}) { @content; }
+    } @else if $breakpoint == 'md' {
+        @media (max-width: #{$bp-md}) { @content; }
+    } @else if $breakpoint == 'lg' {
+        @media (max-width: #{$bp-lg}) { @content; }
+    } @else if $breakpoint == 'xl' {
+        @media (max-width: #{$bp-xl}) { @content; }
+    }
+}
+
+// --- Mixin: Flexbox centrado ---
+@mixin flex-center($direction: row) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+}
+
+// --- Mixin: Padding de sección uniforme ---
+@mixin section-padding($top: 80px, $bottom: 80px) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+
+// --- Mixin: Botón personalizado con colores custom ---
+@mixin btn-custom($bg, $color, $hover-bg: null) {
+    background-color: $bg;
+    color: $color;
+    border: 2px solid transparent;
+    border-radius: $radius-pill;
+    padding: 12px 32px;
+    font-weight: 700;
+    font-family: $font-body;
+    font-size: 0.95rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all $transition-base;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+
+    @if $hover-bg {
+        &:hover {
+            background-color: $hover-bg;
+            color: $color;
+            transform: translateY(-3px);
+            box-shadow: $shadow-golden;
+        }
+    } @else {
+        &:hover {
+            opacity: 0.85;
+            transform: translateY(-3px);
+            box-shadow: $shadow-golden;
+        }
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+}
+
+// --- Mixin: Botón outline ---
+@mixin btn-outline($color, $hover-bg: null) {
+    background-color: transparent;
+    color: $color;
+    border: 2px solid $color;
+    border-radius: $radius-pill;
+    padding: 10px 30px;
+    font-weight: 700;
+    font-family: $font-body;
+    text-decoration: none;
+    display: inline-block;
+    transition: all $transition-base;
+    cursor: pointer;
+
+    &:hover {
+        background-color: if($hover-bg, $hover-bg, $color);
+        color: if($hover-bg, $color, $color-oliva);
+        transform: translateY(-3px);
+        box-shadow: $shadow-golden;
+    }
+}
+
+// --- Mixin: Overlay sobre imagen ---
+@mixin overlay($color: rgba(46, 56, 37, 0.65)) {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: $color;
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+// --- Mixin: Truncar texto con ellipsis ---
+@mixin text-clamp($lines: 2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+}
+
+// --- Mixin: Aspect ratio para imágenes ---
+@mixin aspect-ratio($width, $height) {
+    aspect-ratio: #{$width} / #{$height};
+    object-fit: cover;
+    width: 100%;
+}
+
+// --- Mixin: Glassmorphism ---
+@mixin glass($bg-opacity: 0.1, $blur: 10px) {
+    background-color: rgba(255, 255, 255, $bg-opacity);
+    backdrop-filter: blur($blur);
+    -webkit-backdrop-filter: blur($blur);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}

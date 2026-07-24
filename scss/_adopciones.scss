@@ -1,51 +1,282 @@
-.adopciones {
+// =============================================================
+// _adopciones.scss — Wild Project
+// Filtros de categoría, grid de cards, modal, proceso de adopción
+// =============================================================
+
+// --- Sección intro adopciones ---
+.adopciones-intro {
+    @include section-padding();
+    background-color: $color-fondo;
+    text-align: center;
+
+    p {
+        max-width: 720px;
+        margin: 0 auto;
+        font-size: 1.05rem;
+        color: rgba(51, 51, 51, 0.85);
+    }
+}
+
+// --- Barra de filtros por categoría ---
+.filter-bar {
+    @include flex-center(row);
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+
+    .filter-btn {
+        @extend %btn-base;
+        background-color: transparent;
+        border: 2px solid rgba(128, 118, 97, 0.4);
+        color: $color-texto;
+        padding: 8px 22px;
+        font-size: 0.88rem;
+        border-radius: $radius-pill;
+        transition: all $transition-base;
+
+        &:hover,
+        &.active {
+            background-color: $color-primario;
+            border-color: $color-primario;
+            color: $color-oliva;
+            transform: translateY(-2px);
+            box-shadow: $shadow-golden;
+        }
+    }
+}
+
+// --- Grid de cards de animales ---
+.adopciones-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 1.8rem;
+    padding-bottom: 3rem;
 
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
+    @include respond-to('lg') {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .card-animal {
-        background-color: $color-secundario; /* Fondo Tierra */
-        padding: 20px;
-        border-radius: 10px;
-        border-bottom: 4px solid $color-primario; /* Detalle dorado */
-        text-align: center;
-        transition: transform 0.3s ease;
+    @include respond-to('sm') {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+}
+
+// --- Card individual de animal ---
+.card-animal {
+    @extend %card-base;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+    // Imagen superior
+    .card-img-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 220px;
 
         img {
             width: 100%;
-            border-radius: 5px;
-            margin-bottom: 15px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform $transition-slow;
         }
 
-        p {
-            color: $color-texto-claro; /* 🎯 Párrafo claro para legibilidad */
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
+        .card-badge {
+            @extend %badge-style;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: $color-oliva;
+            color: $color-primario;
+            box-shadow: $shadow-sm;
         }
 
-        a {
-            display: inline-block;
-            margin-top: 15px;
-            background-color: $color-primario;
+        .card-badge-available {
+            @extend %badge-style;
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background-color: rgba(46, 125, 50, 0.85);
+            color: #fff;
+            font-size: 0.65rem;
+        }
+    }
+
+    &:hover .card-img-wrap img {
+        transform: scale(1.08);
+    }
+
+    // Cuerpo de la card
+    .card-body-custom {
+        padding: 1.4rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .card-animal-name {
+            font-family: $font-heading;
             color: $color-oliva;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            
-            &:hover {
-                background-color: $color-fondo;
-                color: $color-oliva;
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.9rem;
+            font-size: 0.8rem;
+            color: rgba(51, 51, 51, 0.55);
+            flex-wrap: wrap;
+
+            span {
+                @include flex-center(row);
+                gap: 5px;
+
+                i {
+                    color: $color-primario;
+                }
             }
         }
 
-        &:hover {
-            transform: scale(1.05);
+        p {
+            color: rgba(51, 51, 51, 0.8);
+            font-size: 0.88rem;
+            flex: 1;
+            margin-bottom: 1.3rem;
+            @include text-clamp(3);
+        }
+
+        .btn-adoptar {
+            @include btn-custom($color-primario, $color-oliva, $color-acento);
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            border-radius: $radius-sm;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// --- Card oculta (filtrado JS) ---
+.card-animal.hidden {
+    display: none;
+}
+
+// --- Modal de Bootstrap: detalle animal ---
+.modal-animal {
+    .modal-content {
+        border: 2px solid rgba(212, 163, 91, 0.3);
+        border-radius: $radius-md;
+        overflow: hidden;
+    }
+
+    .modal-header {
+        background-color: $color-oliva;
+        border-bottom: 1px solid rgba(212, 163, 91, 0.3);
+
+        .modal-title {
+            font-family: $font-heading;
+            color: $color-primario;
+        }
+
+        .btn-close {
+            filter: invert(1) sepia(1) saturate(2) hue-rotate(0deg);
+        }
+    }
+
+    .modal-body {
+        background-color: $color-fondo;
+        padding: 2rem;
+
+        img {
+            border-radius: $radius-md;
+            margin-bottom: 1.5rem;
+            @include aspect-ratio(4, 3);
+        }
+    }
+
+    .modal-footer {
+        background-color: $color-fondo;
+        border-top: 1px solid rgba(128, 118, 97, 0.2);
+
+        .btn-modal-adoptar {
+            @include btn-custom($color-primario, $color-oliva, $color-acento);
+        }
+
+        .btn-modal-close {
+            @include btn-outline($color-secundario);
+            color: $color-texto;
+        }
+    }
+}
+
+// --- Sección "Proceso de Adopción" ---
+.proceso-adopcion {
+    background: linear-gradient(
+        135deg,
+        $color-oliva 0%,
+        darken($color-oliva, 10%) 100%
+    );
+    @include section-padding();
+
+    .proceso-title {
+        color: $color-texto-claro;
+    }
+
+    .proceso-subtitle {
+        color: rgba(240, 234, 214, 0.65);
+    }
+
+    .proceso-step {
+        text-align: center;
+        padding: 1.5rem 1rem;
+        position: relative;
+
+        // Línea conectora horizontal (desktop)
+        &:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2.8rem;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(90deg, $color-primario, rgba(212, 163, 91, 0.3));
+
+            @include respond-to('md') {
+                display: none;
+            }
+        }
+
+        .step-icon-circle {
+            @extend %icon-circle;
+            width: 64px;
+            height: 64px;
+            background: rgba(212, 163, 91, 0.12);
+            border: 2px solid $color-primario;
+            margin: 0 auto 1.2rem;
+            font-size: 1.6rem;
+            color: $color-primario;
+
+            &:hover {
+                background: $color-primario;
+                color: $color-oliva;
+                box-shadow: $shadow-golden;
+            }
+        }
+
+        h4 {
+            color: $color-primario;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: rgba(240, 234, 214, 0.65);
+            font-size: 0.85rem;
+            margin: 0;
         }
     }
 }

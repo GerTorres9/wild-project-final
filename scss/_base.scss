@@ -1,0 +1,145 @@
+// =============================================================
+// _base.scss — Wild Project
+// Reset, estilos globales, tipografía, utilidades generales
+// =============================================================
+
+// --- Reset y box-sizing ---
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: $color-fondo;
+    color: $color-texto;
+    font-family: $font-body;
+    line-height: $line-height-base;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+main {
+    flex: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: $color-primario;
+    transition: color $transition-base;
+
+    &:hover {
+        color: $color-acento;
+        text-decoration: none;
+    }
+}
+
+// --- Tipografía ---
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-heading;
+    color: $color-oliva;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: clamp(1.8rem, 5vw,   3.2rem); }
+h2 { font-size: clamp(1.4rem, 3.5vw, 2.2rem); }
+h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+h4 { font-size: clamp(1rem,   2vw,   1.2rem); }
+
+p {
+    margin-bottom: $spacing-sm;
+    line-height: $line-height-base;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+// --- Utilidades de color ---
+.text-dorado  { color: $color-primario !important; }
+.text-oliva   { color: $color-oliva !important; }
+.text-arena   { color: $color-fondo !important; }
+.text-tierra  { color: $color-secundario !important; }
+
+.bg-oliva     { background-color: $color-oliva !important; }
+.bg-arena     { background-color: $color-fondo !important; }
+.bg-tierra    { background-color: $color-secundario !important; }
+.bg-dorado    { background-color: $color-primario !important; }
+
+// --- Separador decorativo dorado ---
+.divider-gold {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, $color-primario, $color-acento);
+    border-radius: $radius-pill;
+    margin: 1rem auto;
+    border: none;
+}
+
+.divider-gold-left {
+    @extend .divider-gold;
+    margin: 1rem 0;
+}
+
+// --- Títulos de sección ---
+.section-title {
+    font-family: $font-heading;
+    color: $color-oliva;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: rgba(51, 51, 51, 0.75);
+    max-width: 620px;
+    margin: 0 auto 3rem;
+    font-size: 1.05rem;
+}
+
+// --- Imagen de sección genérica ---
+.img-seccion {
+    width: 100%;
+    max-width: 800px;
+    border-radius: $radius-md;
+    margin: 2rem auto;
+    display: block;
+    box-shadow: $shadow-md;
+}
+
+// --- Scrollbar custom ---
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $color-fondo;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $color-primario;
+    border-radius: $radius-pill;
+
+    &:hover {
+        background: $color-acento;
+    }
+}
+
+// --- Selección de texto ---
+::selection {
+    background-color: rgba(212, 163, 91, 0.3);
+    color: $color-oliva;
+}

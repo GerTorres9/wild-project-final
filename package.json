@@ -1,4 +1,11 @@
 {
+  "name": "wild-project",
+  "version": "1.0.0",
+  "description": "Wild Project — Sitio institucional de rescate y adopción de animales",
+  "scripts": {
+    "sass:watch": "sass --watch scss/style.scss:css/style.css --style=expanded --source-map",
+    "sass:build": "sass scss/style.scss:css/style.css --style=compressed --no-source-map"
+  },
   "devDependencies": {
     "sass": "^1.101.0"
   }

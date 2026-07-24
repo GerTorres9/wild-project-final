@@ -1,0 +1,131 @@
+// =============================================================
+// _extend.scss — Wild Project
+// Placeholders reutilizables con @extend
+// =============================================================
+
+// --- Placeholder: base de tarjeta con hover ---
+%card-base {
+    background-color: #fff;
+    border-radius: $radius-md;
+    overflow: hidden;
+    box-shadow: $shadow-sm;
+    transition: transform $transition-base, box-shadow $transition-base;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-md;
+    }
+}
+
+// --- Placeholder: botón base ---
+%btn-base {
+    display: inline-block;
+    padding: 10px 26px;
+    border-radius: $radius-pill;
+    font-weight: 700;
+    font-family: $font-body;
+    text-decoration: none;
+    transition: all $transition-base;
+    cursor: pointer;
+    border: none;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+// --- Placeholder: título de sección con línea decorativa ---
+%section-title-decorated {
+    font-family: $font-heading;
+    color: $color-oliva;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1.2rem;
+    margin-bottom: 0.5rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, $color-primario, $color-acento);
+        border-radius: $radius-pill;
+    }
+}
+
+// --- Placeholder: hero con imagen de fondo y overlay ---
+%hero-overlay {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            135deg,
+            rgba(46, 56, 37, 0.78) 0%,
+            rgba(212, 163, 91, 0.30) 100%
+        );
+        z-index: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+// --- Placeholder: texto claro sobre fondo oscuro ---
+%light-text-on-dark {
+    color: $color-texto-claro;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-texto-claro;
+    }
+
+    p {
+        color: rgba(240, 234, 214, 0.88);
+    }
+}
+
+// --- Placeholder: badge / etiqueta ---
+%badge-style {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: $radius-pill;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+// --- Placeholder: tarjeta de info sobre fondo oscuro ---
+%dark-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 163, 91, 0.25);
+    border-radius: $radius-md;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all $transition-base;
+
+    &:hover {
+        border-color: rgba(212, 163, 91, 0.6);
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}
+
+// --- Placeholder: ícono circular decorativo ---
+%icon-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all $transition-base;
+}

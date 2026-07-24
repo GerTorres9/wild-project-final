@@ -1,7 +1,63 @@
+// =============================================================
+// style.scss — Wild Project
+// Archivo principal: importa todos los partials en orden
+// =============================================================
 
+// 1. Variables — paleta, tipografía, espaciado, sombras
 @import 'variables';
-@import 'header';
+
+// 2. Mixins — respond-to, flex-center, btn-custom, etc.
+@import 'mixins';
+
+// 3. Extend — placeholders %card-base, %btn-base, %hero-overlay
+@import 'extend';
+
+// 4. Animaciones — keyframes y clases de animación
+@import 'animations';
+
+// 5. Base — reset, body, tipografía global, utilidades
+@import 'base';
+
+// 6. Componentes globales
+@import 'navbar';
 @import 'footer';
+
+// 7. Secciones de páginas
+@import 'hero';
 @import 'adopciones';
-@import 'contacto';
+@import 'nosotros';
 @import 'ecologia';
+@import 'contacto';
+
+// =============================================================
+// 8. Botón "Volver arriba" (global)
+// =============================================================
+.btn-scroll-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, $color-primario, $color-acento);
+    color: $color-oliva;
+    border: none;
+    border-radius: 50%;
+    @include flex-center();
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity $transition-base, transform $transition-base, box-shadow $transition-base;
+    box-shadow: $shadow-golden;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-lg;
+    }
+}

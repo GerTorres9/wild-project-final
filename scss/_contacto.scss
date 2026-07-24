@@ -1,57 +1,233 @@
-body {
+// =============================================================
+// _contacto.scss — Wild Project
+// Info de contacto, formulario validado, toast Bootstrap
+// =============================================================
+
+// --- Sección principal de contacto ---
+.contacto-section {
+    @include section-padding();
     background-color: $color-fondo;
-    color: $color-texto;
-    text-align: center;
-    margin: 0;
-    padding: 0;
 }
-form {
-    background-color: $color-secundario;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 
-    label {
-        font-weight: bold;
-        color: $color-fondo
+// --- Tarjeta de información de contacto ---
+.contact-info-card {
+    background-color: $color-oliva;
+    border-radius: $radius-md;
+    padding: 2.5rem 2rem;
+    height: 100%;
+    box-shadow: $shadow-md;
+
+    .contact-info-title {
+        font-family: $font-heading;
+        color: $color-primario;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
     }
 
-    input {
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: $color-fondo;
-        color: $color-oliva;
-        font-weight: bold;
+    .contact-info-lead {
+        color: rgba(240, 234, 214, 0.6);
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
     }
 
-    select, textarea { 
+    // Ítem individual de info
+    .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(212, 163, 91, 0.15);
+        transition: transform $transition-base;
 
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        font-family: inherit;
-         background-color: $color-fondo;
-        color: $color-oliva;
-        font-weight: bold;
-    }
-
-    button {
-
-        background-color: $color-oliva;
-        color: $color-fondo;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-weight: bold;
-        cursor: pointer;
+        &:last-of-type {
+            border-bottom: none;
+        }
 
         &:hover {
-           opacity: 0.8;
+            transform: translateX(4px);
         }
+
+        .contact-icon {
+            @extend %icon-circle;
+            width: 46px;
+            height: 46px;
+            background: rgba(212, 163, 91, 0.12);
+            border: 1px solid rgba(212, 163, 91, 0.35);
+            font-size: 1.15rem;
+            color: $color-primario;
+            transition: all $transition-base;
+        }
+
+        &:hover .contact-icon {
+            background: $color-primario;
+            color: $color-oliva;
+            box-shadow: $shadow-golden;
+        }
+
+        .contact-text {
+            h4 {
+                color: $color-primario;
+                font-size: 0.78rem;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                margin: 0 0 0.3rem;
+            }
+
+            p, span {
+                color: $color-texto-claro;
+                font-size: 0.92rem;
+                margin: 0;
+            }
+        }
+    }
+
+    // Redes sociales
+    .contact-social {
+        display: flex;
+        gap: 10px;
+        margin-top: 1.8rem;
+
+        a {
+            @extend %icon-circle;
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 163, 91, 0.12);
+            border: 1px solid rgba(212, 163, 91, 0.3);
+            color: $color-primario;
+            text-decoration: none;
+            font-size: 1rem;
+
+            &:hover {
+                background: $color-primario;
+                color: $color-oliva;
+                transform: translateY(-4px);
+                box-shadow: $shadow-golden;
+            }
+        }
+    }
+}
+
+// --- Formulario de contacto ---
+.form-contacto {
+    background-color: #fff;
+    border-radius: $radius-md;
+    padding: 2.5rem;
+    box-shadow: $shadow-md;
+    border: 1px solid rgba(128, 118, 97, 0.12);
+
+    .form-title {
+        font-family: $font-heading;
+        color: $color-oliva;
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .form-lead {
+        color: rgba(51, 51, 51, 0.6);
+        font-size: 0.9rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: $color-oliva;
+        font-size: 0.88rem;
+        letter-spacing: 0.3px;
+        margin-bottom: 0.35rem;
+
+        .required {
+            color: $color-primario;
+            margin-left: 2px;
+        }
+    }
+
+    .form-control,
+    .form-select {
+        border: 2px solid rgba(128, 118, 97, 0.22);
+        border-radius: $radius-sm;
+        padding: 0.65rem 1rem;
+        color: $color-texto;
+        background-color: #fff;
+        font-family: $font-body;
+        font-size: 0.95rem;
+        transition: border-color $transition-base, box-shadow $transition-base;
+
+        &::placeholder {
+            color: rgba(51, 51, 51, 0.4);
+        }
+
+        &:focus {
+            border-color: $color-primario;
+            box-shadow: 0 0 0 0.2rem rgba(212, 163, 91, 0.2);
+            outline: none;
+            background-color: #fff;
+        }
+
+        &.is-valid {
+            border-color: #2E7D32;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%232E7D32' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+        }
+
+        &.is-invalid {
+            border-color: #c62828;
+        }
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 135px;
+    }
+
+    .form-select {
+        cursor: pointer;
+    }
+
+    // Botón de envío
+    .btn-submit {
+        @include btn-custom($color-oliva, $color-primario, darken($color-oliva, 5%));
+        width: 100%;
+        padding: 14px;
+        font-size: 0.98rem;
+        border-radius: $radius-sm;
+        margin-top: 0.5rem;
+
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+// --- Toast de Bootstrap customizado ---
+.toast-container {
+    z-index: 1090;
+}
+
+.toast-wild {
+    background-color: $color-oliva;
+    border: 1px solid rgba(212, 163, 91, 0.4);
+    border-radius: $radius-md;
+    min-width: 320px;
+    box-shadow: $shadow-lg;
+
+    .toast-header {
+        background-color: rgba(212, 163, 91, 0.1);
+        color: $color-primario;
+        border-bottom: 1px solid rgba(212, 163, 91, 0.25);
+        border-radius: $radius-md $radius-md 0 0;
+        font-family: $font-heading;
+        font-size: 0.95rem;
+
+        .btn-close {
+            filter: invert(1) brightness(0.7) sepia(1) hue-rotate(5deg);
+        }
+    }
+
+    .toast-body {
+        color: $color-texto-claro;
+        font-size: 0.92rem;
+        padding: 1rem 1.2rem;
     }
 }
