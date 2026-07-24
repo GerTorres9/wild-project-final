@@ -5,6 +5,7 @@
 
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'extend';
 
 .site-footer {
     background-color: $color-oliva;

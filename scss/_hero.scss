@@ -5,6 +5,7 @@
 
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'extend';
 
 // --- Hero principal (index.html) ---
 .hero-main {
