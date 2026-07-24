@@ -3,6 +3,9 @@
 // Reset, estilos globales, tipografía, utilidades generales
 // =============================================================
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 // --- Reset y box-sizing ---
 *, *::before, *::after {
     margin: 0;

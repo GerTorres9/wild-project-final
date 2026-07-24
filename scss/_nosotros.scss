@@ -3,6 +3,9 @@
 // Intro, timeline, valores, equipo, cita inspiracional
 // =============================================================
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 // --- Sección intro ---
 .nosotros-intro {
     @include section-padding();

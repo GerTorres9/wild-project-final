@@ -3,6 +3,9 @@
 // Footer institucional con 3 columnas, redes sociales y créditos
 // =============================================================
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .site-footer {
     background-color: $color-oliva;
     color: $color-texto-claro;

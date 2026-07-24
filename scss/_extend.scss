@@ -3,6 +3,8 @@
 // Placeholders reutilizables con @extend
 // =============================================================
 
+@use 'variables' as *;
+
 // --- Placeholder: base de tarjeta con hover ---
 %card-base {
     background-color: #fff;

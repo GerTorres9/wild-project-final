@@ -3,6 +3,8 @@
 // Keyframes y clases de animación
 // =============================================================
 
+@use 'variables' as *;
+
 // --- Fade In desde abajo ---
 @keyframes fadeInUp {
     from {
@@ -85,7 +87,7 @@
     to   { transform: rotate(360deg); }
 }
 
-// --- Counter up (para el JS) ---
+// --- Counter up ---
 @keyframes countUp {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -121,7 +123,7 @@
     animation: float 3s ease-in-out infinite;
 }
 
-// --- Delays escalonados (para listas de cards) ---
+// --- Delays escalonados ---
 @for $i from 1 through 8 {
     .delay-#{$i} {
         animation-delay: #{$i * 0.12}s;
@@ -152,4 +154,12 @@
     background-size: 200% auto;
     animation: shimmer 1.8s linear infinite;
     border-radius: $radius-sm;
+}
+
+// --- Accesibilidad: Reducción de movimiento según preferencia de usuario (Módulo 8) ---
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }

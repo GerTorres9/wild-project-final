@@ -3,6 +3,9 @@
 // Filtros de categoría, grid de cards, modal, proceso de adopción
 // =============================================================
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 // --- Sección intro adopciones ---
 .adopciones-intro {
     @include section-padding();

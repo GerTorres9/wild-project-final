@@ -3,6 +3,9 @@
 // Hero de inicio, héroe de páginas secundarias, stats, steps, CTA
 // =============================================================
 
+@use 'variables' as *;
+@use 'mixins' as *;
+
 // --- Hero principal (index.html) ---
 .hero-main {
     @extend %hero-overlay;

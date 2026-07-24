@@ -1,23 +1,11 @@
 /**
  * main.js — Wild Project
- * AOS init, navbar scroll, active nav link, counters, filtros, toast de contacto
+ * Navbar scroll, active nav link, contadores, filtros, toast de contacto
  */
 
 'use strict';
 
-// ============================================================
-// 1. AOS — Animate On Scroll (inicialización)
-// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 700,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 80,
-        });
-    }
-
     initNavbarScroll();
     setActiveNavLink();
     initCounters();

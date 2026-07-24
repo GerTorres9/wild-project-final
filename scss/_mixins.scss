@@ -3,6 +3,8 @@
 // Mixins reutilizables: responsive, flex, botones, secciones
 // =============================================================
 
+@use 'variables' as *;
+
 // --- Mixin: Responsive breakpoints ---
 @mixin respond-to($breakpoint) {
     @if $breakpoint == 'xs' {
