@@ -1,37 +1,24 @@
-// =============================================================
-// style.scss — Wild Project
-// Archivo principal: carga todos los módulos partials en orden
-// =============================================================
 
-// 1. Variables — paleta, tipografía, espaciado, sombras
+
 @use 'variables' as *;
 
-// 2. Mixins — respond-to, flex-center, btn-custom, etc.
 @use 'mixins' as *;
 
-// 3. Extend — placeholders %card-base, %btn-base, %hero-overlay
 @use 'extend';
 
-// 4. Animaciones — keyframes y clases de animación
 @use 'animations';
 
-// 5. Base — reset, body, tipografía global, utilidades
 @use 'base';
 
-// 6. Componentes globales
 @use 'navbar';
 @use 'footer';
 
-// 7. Secciones de páginas
 @use 'hero';
 @use 'adopciones';
 @use 'nosotros';
 @use 'ecologia';
 @use 'contacto';
 
-// =============================================================
-// 8. Botón "Volver arriba" (global)
-// =============================================================
 .btn-scroll-top {
     position: fixed;
     bottom: 2rem;
