@@ -7,16 +7,34 @@
 
 // --- Mixin: Responsive breakpoints ---
 @mixin respond-to($breakpoint) {
-    @if $breakpoint == 'xs' {
-        @media (max-width: #{$bp-xs}) { @content; }
-    } @else if $breakpoint == 'sm' {
-        @media (max-width: #{$bp-sm}) { @content; }
-    } @else if $breakpoint == 'md' {
-        @media (max-width: #{$bp-md}) { @content; }
-    } @else if $breakpoint == 'lg' {
-        @media (max-width: #{$bp-lg}) { @content; }
-    } @else if $breakpoint == 'xl' {
-        @media (max-width: #{$bp-xl}) { @content; }
+    @if $breakpoint =='xs' {
+        @media (max-width: #{$bp-xs}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='sm' {
+        @media (max-width: #{$bp-sm}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='md' {
+        @media (max-width: #{$bp-md}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='lg' {
+        @media (max-width: #{$bp-lg}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint =='xl' {
+        @media (max-width: #{$bp-xl}) {
+            @content;
+        }
     }
 }
 
@@ -57,7 +75,9 @@
             transform: translateY(-3px);
             box-shadow: $shadow-golden;
         }
-    } @else {
+    }
+
+    @else {
         &:hover {
             opacity: 0.85;
             transform: translateY(-3px);
@@ -104,7 +124,7 @@
         z-index: 1;
     }
 
-    > * {
+    >* {
         position: relative;
         z-index: 2;
     }

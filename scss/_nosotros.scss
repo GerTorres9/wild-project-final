@@ -41,11 +41,9 @@
 
 // --- Sección historia (timeline) ---
 .historia {
-    background: linear-gradient(
-        155deg,
-        $color-oliva 0%,
-        darken($color-oliva, 8%) 100%
-    );
+    background: linear-gradient(155deg,
+            $color-oliva 0%,
+            darken($color-oliva, 8%) 100%);
     @include section-padding();
 
     .historia-title {
@@ -71,11 +69,9 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(
-                180deg,
-                $color-primario 0%,
-                rgba(212, 163, 91, 0.2) 100%
-            );
+            background: linear-gradient(180deg,
+                    $color-primario 0%,
+                    rgba(212, 163, 91, 0.2) 100%);
             transform: translateX(-50%);
 
             @include respond-to('md') {

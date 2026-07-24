@@ -218,11 +218,9 @@
 
 // --- Sección "Proceso de Adopción" ---
 .proceso-adopcion {
-    background: linear-gradient(
-        135deg,
-        $color-oliva 0%,
-        darken($color-oliva, 10%) 100%
-    );
+    background: linear-gradient(135deg,
+            $color-oliva 0%,
+            darken($color-oliva, 10%) 100%);
     @include section-padding();
 
     .proceso-title {
